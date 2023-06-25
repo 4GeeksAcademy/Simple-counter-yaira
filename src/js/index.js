@@ -7,6 +7,11 @@ import "../styles/index.css";
 
 //import your own components
 import Home from "./component/home.jsx";
+let sec = 0;
+setInterval(()=> {
+    sec++;
+    ReactDOM.render(<Home sec={sec} />, document.querySelector("#app"));
+
+})
 
 //render your react application
-ReactDOM.render(<Home />, document.querySelector("#app"));
