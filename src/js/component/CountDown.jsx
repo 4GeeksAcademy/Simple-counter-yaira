@@ -6,9 +6,8 @@ const CountDown = (props) => {
     let [counter,setCounter] = useState(0)
 
     const start = () => {
-        
-        console.log(counter);
-             timer = setInterval(() => {
+         console.log(counter);
+            timer = setInterval(() => {
                     console.log(counter);
                     setCounter(counter--)
                     if (counter < 0)
@@ -20,16 +19,16 @@ const CountDown = (props) => {
     }
     console.log(countDown);
 
-    //  stop.addEventListener('click' , () =>{
-    //      clearInterval(interval);
-    //  })
-    const reset = (target) => {
+    const stop = () => {
+        clearInterval(timer)
+    }
+
+    const reset = () => {
         
           setCounter(0)
-        //   target.value = 0
-        //   e.target.reset();
           console.log(timer)
           clearInterval(timer)
+          document.getElementById("myInput").value = "";
           
     }
 
@@ -43,7 +42,6 @@ const CountDown = (props) => {
         <div className="d-flex align-items-start flex-row justify-content-center">    
             <button className="btn btn-success me-2" type="button" name="countDown" onClick={start}>Start</button>
             <button className="btn btn-danger me-2" type="button" name="countDown" onClick={stop}>Stop</button>
-            <button className="btn btn-warning me-2" type="button" name="countDown" onClick={resume}>Resume</button>
             <button className="btn btn-secondary" type="button" name="countDown" onClick={reset}>Reset</button>
         </div>
 
@@ -51,20 +49,6 @@ const CountDown = (props) => {
     );
 }
 
-function start (){
 
-}
-
-function stop(){
-
-}
-
-function resume(){
-
-}
-
-function reset(){
-
-}
 
 export default CountDown
